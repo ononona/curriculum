@@ -11,8 +11,13 @@ public class Qes1_13 {
 		long longVar = 0;
 		float floatVar = 0.0f;
 		double doubleVar = 0.0d;
+<<<<<<< HEAD
 		char charVar = '\u0000'; 
 		String stringVar = null;
+=======
+		char charVar = '\u0000';
+		String stringVar = "";
+>>>>>>> branch 'ononona' of https://github.com/ononona/curriculum.git
 		boolean booleanVar = false;
 
 		// 問題３ ローカル変数に値を代入する	
