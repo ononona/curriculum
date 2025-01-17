@@ -16,7 +16,9 @@ public class Curriculum_New_1_18 {
 		printArray(numbers);
 
 		// Q4:オーバーロードで2つの小数の和を出力するメソッド
-		addAndPrint(3.5, 2.5);
+		addAndPrint(3.5, 2.5); // double型を受け取るメソッド
+		addAndPrint(3, 2); // int型を受け取るオーバーロードメソッド
+		addAndPrint(1.5f, 2.5f); // float型を受け取るオーバーロードメソッド
 
 		// Q5:指定回数分ランダムな数値を生成し出力＆返すメソッド
 		int[] randomNumbers = generateRandomNumbers(10);
@@ -41,7 +43,7 @@ public class Curriculum_New_1_18 {
 
 	// Q2:整数の乗算を行うメソッド
 	public static void multiplyAndPrint(int num1, int num2) {
-		System.out.println("Result: " + (num1 * num2));
+		System.out.println(num1 * num2);
 	}
 
 	// Q3:整数配列を順番に出力するメソッド
@@ -56,26 +58,23 @@ public class Curriculum_New_1_18 {
 		System.out.println("Sum: " + (num1 + num2));
 	}
 
+	// オーバーロード1:int型の和を計算するメソッド
+	public static void addAndPrint(int num1, int num2) {
+		System.out.println("Sum (int): " + (num1 + num2));
+	}
+
+	// オーバーロード2:float型の和を計算するメソッド
+	public static void addAndPrint(float num1, float num2) {
+		System.out.println("Sum (float): " + (num1 + num2));
+	}
+
 	// Q5:ランダムな値を生成して配列に格納・出力するメソッド
 	public static int[] generateRandomNumbers(int count) {
 		Random random = new Random();
 		int[] randomNumbers = new int[count];
-		int index = 0;
-
-		while (index < count) {
-			int rand = random.nextInt(100) + 1; // 1～100のランダムな整数
-			if (rand != 0) {
-				randomNumbers[index] = rand;
-				index++;
-			}
+		for (int i = 0; i < count; i++) {
+			randomNumbers[i] = random.nextInt(100) + 1; // 1～100のランダムな整数
 		}
-
-		// コンソールに出力する
-		System.out.println("Generated random numbers:");
-		for (int num : randomNumbers) {
-			System.out.println(num);
-		}
-
 		return randomNumbers;
 	}
 
@@ -85,15 +84,11 @@ public class Curriculum_New_1_18 {
 		for (int num : array) {
 			sum += num;
 		}
-		double average = (double) sum / array.length;
-		System.out.println("Average: " + average);
-		return average;
+		return (double) sum / array.length;
 	}
 
 	// Q7:平均値が50以上か判定するメソッド
 	public static boolean checkIfAbove50(double value) {
-		boolean result = value >= 50;
-		System.out.println("Is value >= 50 " + result);
-		return result;
+		return value >= 50;
 	}
 }
